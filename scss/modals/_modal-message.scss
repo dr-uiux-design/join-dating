@@ -56,18 +56,12 @@
   width: 100%;
   padding: 25px;
   text-align: center;
-  background-color: #fff;
+  background-color: #333;
   transition: all 0.2s ease-in-out;
   transition-duration: 0.5s;
   z-index: 10;
   margin-bottom: 64px;
   transform: translateY(-50px);
-
-  &.is-hide {
-    top: -100%;
-    visibility: hidden;
-    pointer-events: none;
-  }
 
   &__title {
     color: #fff;

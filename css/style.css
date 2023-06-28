@@ -2525,7 +2525,7 @@ button {
   width: 100%;
   padding: 25px;
   text-align: center;
-  background-color: #fff;
+  background-color: #333;
   -webkit-transition: all 0.2s ease-in-out;
   -o-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
@@ -2537,11 +2537,6 @@ button {
   -webkit-transform: translateY(-50px);
       -ms-transform: translateY(-50px);
           transform: translateY(-50px);
-}
-.info-message.is-hide {
-  top: -100%;
-  visibility: hidden;
-  pointer-events: none;
 }
 .info-message__title {
   color: #fff;
