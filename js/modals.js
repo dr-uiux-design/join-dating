@@ -1,15 +1,6 @@
-	// Modals
-
-		/* ------------------- Уведомление о необходимости зарегистрироваться -------------------- */
-	const infoMessageBtn = document.querySelector('.js-btn-join');
-	const infoMessage = document.querySelector('.info-message');
-	
-	infoMessageBtn.addEventListener('click', () => {
-		infoMessage.classList.remove('is-show');
-		infoMessage.classList.add('is-hide');
-	});
-
-	// Запрет прокрутки и устранения дерганья при открытии модалок
+document.addEventListener('DOMContentLoaded', function() {
+    
+// Запрет прокрутки и устранения дерганья при открытии модалок
 	const body = document.querySelector('body');
 	const scrollWidth = window.innerWidth - document.documentElement.clientWidth;
 
@@ -36,7 +27,6 @@
 			modal.classList.remove('is-active');
 			body.style.overflow = '';
 			body.style.paddingRight = 0;
-
 		}
 	}
 	modals.forEach(modal => {
@@ -105,4 +95,10 @@
 		body.style.overflow = '';
 		body.style.paddingRight = 0;
 	});
+
+	// конец
+});
+
+
+
 

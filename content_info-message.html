@@ -506,7 +506,6 @@
 		<div class="modals__overlay">
 			<div class="modals__content">
 				<div class="modals__close"></div>
-				<!-- reg-form -->
 				<form action="" class="reg-form">
 					<h3 class="rf-title">Register Now</h3>
 					<div class="rf-text">Enter your data and register</div>
@@ -540,11 +539,63 @@
 								Policy</a></div>
 					</div>
 				</form>
-				<!-- reg-form -->
 			</div>
 		</div>
 	</div>
 	<!----------- Modal Register Form ------------->
+
+	<!----------- Modal Register Form + Info Message ------------->
+	<div class="modal-message is-active">
+		<div class="modal-message__overlay">
+			<div class="modal-message__content">
+
+				<!-- info-message -->
+				<div class="info-message">
+					<h3 class="info-message__title">Do you want to continue watching? Then <span>Register Now!</span></h3>
+				</div>
+				<!-- / .info-message -->
+
+				<!-- reg-form -->
+				<form action="" class="reg-form">
+					<div class="modals__close modal-message__close"></div>
+					<h3 class="rf-title">Register Now</h3>
+					<div class="rf-text">Enter your data and register</div>
+					<div class="rf-body">
+						<div class="custom-select select-looking">
+							<input type="text" name="looking" class="custom-select__input" placeholder="I am men looking for woman" readonly="">
+							<div class="custom-select__options">
+								<div class="custom-select__option" data-value="gender-looking">I am men looking for woman</div>
+								<div class="custom-select__option" data-value="gender-looking">I am woman looking for men</div>
+								<div class="custom-select__option" data-value="gender-looking">I am men looking for men</div>
+								<div class="custom-select__option" data-value="gender-looking">I am woman looking for woman</div>
+							</div>
+						</div>
+						<div class="rf-row">
+							<span class="rf-icon"><span class="icon-user"></span></span>
+							<input class="rf-text-field" type="text" placeholder="Enter your name" autocomplete="off">
+						</div>
+						<div class="rf-row">
+							<span class="rf-icon"><span class="icon-email"></span></span>
+							<input class="rf-text-field" type="text" placeholder="Enter your email" autocomplete="off">
+						</div>
+						<div class="rf-row">
+							<span class="rf-icon"><span class="icon-location"></span></span>
+							<input class="rf-text-field typeahead" type="text" placeholder="Countries" autocomplete="off">
+						</div>
+						<div class="rf-row">
+							<button class="btn rf-sub" type="submit"><span>Join now</span></button>
+						</div>
+						<div class="privacy-policy">By clicking “Join Now” you agree with the Terms and <a href="/">Conditions</a> and <a
+								href="/">Privacy
+								Policy</a></div>
+					</div>
+				</form>
+				<!-- / .reg-form -->
+
+			</div>
+		</div>
+	</div>
+	<!----------- Modal Register Form + Info Message ------------->
 
 	<script defer src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<script defer src="js/jquery-ui.min.js"></script>
@@ -553,6 +604,35 @@
 	<script defer src="js/jquery.fancybox.min.js"></script>
 	<script defer src="js/modals.js"></script>
 	<script defer src="js/main.js"></script>
+
+
+	<script>
+		/* ------------------- Модалка с уведомлением и формой регистрации -------------------- */
+		const modalMessage = document.querySelector('.modal-message');
+		const modalMessageClose = document.querySelector('.modal-message__close');
+		const modalMessageContent = document.querySelector('.modal-message__content');
+		const body = document.querySelector('body');
+
+		// Если модалка открыта, то запрещаем прокрутку body
+		if (modalMessage.classList.contains('is-active')) {
+			body.style.overflow = 'hidden';
+		}
+
+		// Закрытие модалки modal-message
+		modalMessageClose.addEventListener('click', () => {
+			modalMessage.classList.remove('is-active');
+			body.style.overflow = '';
+		});
+
+		// Закрытие по .modal-message__content
+		modalMessageContent.addEventListener('click', (e) => {
+			const isOverlayClick = e.target === modalMessageContent;
+			if (isOverlayClick) {
+				modalMessage.classList.remove('is-active');
+				body.style.overflow = '';
+			}
+		});
+	</script>
 </body>
 
 </html>

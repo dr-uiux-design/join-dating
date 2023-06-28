@@ -772,52 +772,18 @@ button {
 }
 
 .rs-pic {
-  list-style-position: outside;
-  list-style: none;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin: 7px -15px 30px -15px;
-}
-.rs-pic li {
-  margin: 0 15px;
-  width: 80px;
-  height: 80px;
+  width: 104px;
+  height: 104px;
   border-radius: 50%;
-  position: relative;
+  margin: 0 auto;
+  margin-bottom: 30px;
+  overflow: hidden;
 }
-.rs-pic li.active {
-  width: 120px;
-  height: 120px;
-}
-.rs-pic li.active:before {
-  content: "";
-  position: absolute;
-  left: -7px;
-  top: -7px;
-  right: -7px;
-  bottom: -7px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.05);
-}
-.rs-pic li.active img {
-  -webkit-filter: none;
-  filter: none;
-}
-.rs-pic li img {
-  display: block;
+.rs-pic img {
   width: 100%;
-  border-radius: 50%;
-  -webkit-filter: grayscale(100%);
-  filter: grayscale(100%);
-  position: relative;
-  z-index: 2;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .rs-name {
@@ -984,8 +950,8 @@ button {
   height: 48px;
   padding: 0 15px 0 40px;
   border-radius: 5px;
-  border: 1px solid #373737;
-  background: #373737;
+  border: none;
+  background: rgba(255, 255, 255, 0.04);
   font: 15px/130% "Open Sans", sans-serif;
   color: #fff;
 }
@@ -1305,9 +1271,8 @@ button {
 .pb-menu li.active .pb-item {
   background: #ffffff;
   border-color: #ffffff;
-  color: #333333;
 }
-.pb-menu li.active .pb-item span {
+.pb-menu li.active .pb-item .pb-item-text {
   color: #333333;
 }
 .pb-menu li.active .pb-item .pb-item-icon {
@@ -1341,7 +1306,7 @@ button {
   border-color: #ffffff;
   color: #333333;
 }
-.pb-menu li .pb-item > span {
+.pb-menu li .pb-item .pb-item-icon {
   display: block;
   margin-right: 10px;
   color: #f0cf69;
@@ -1738,7 +1703,7 @@ button {
   top: 0;
   bottom: 0;
   width: 41%;
-  background: url("../images/img/plb-pic.jpg") no-repeat center center;
+  background: url("../images/plb-pic.jpg") no-repeat center center;
   background-size: cover;
 }
 
@@ -2156,11 +2121,11 @@ button {
   box-sizing: border-box;
   height: 48px;
   padding: 0 15px;
+  color: #fff;
   border-radius: 5px;
   border: none;
-  background: #373737;
   font: 16px/130% "Open Sans", sans-serif;
-  color: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.04);
   -webkit-transition: all 0.1s ease-in-out;
   -o-transition: all 0.1s ease-in-out;
   transition: all 0.1s ease-in-out;
@@ -2284,9 +2249,9 @@ button {
   z-index: 9999;
   visibility: hidden;
   opacity: 0;
-  -webkit-transition: all 0.2s;
-  -o-transition: all 0.2s;
-  transition: all 0.2s;
+  -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
   pointer-events: none;
 }
 .modals__overlay {
@@ -2354,7 +2319,8 @@ button {
 .modals__header-title {
   color: #fff;
   font-family: "Akrobat", sans-serif;
-  font: 800 32px/120% "Akrobat", sans-serif !important;
+  font-size: 32px;
+  line-height: 1.2;
   text-transform: uppercase;
 }
 .modals__header-title span {
@@ -2367,9 +2333,6 @@ button {
   line-height: 1.4;
   margin-top: clamp(0rem, -1rem + 5vw, 0.7rem);
   color: rgba(255, 255, 255, 0.7);
-}
-.modals__header-descr span {
-  color: #f0cf69;
 }
 .modals__footer {
   margin-top: 20px;
@@ -2421,7 +2384,7 @@ button {
     margin-bottom: 20px;
   }
   .modals__header-title {
-    font-size: 28px !important;
+    font-size: 24px !important;
   }
   .modals__header-descr {
     font-size: 16px;
@@ -2446,80 +2409,8 @@ button {
   border: none;
 }
 
-.info-message {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  width: 100%;
-  height: 100%;
-  padding: 25px;
-  text-align: center;
-  background-color: #212121;
-  position: absolute;
-  top: 0;
-  left: 0;
-  -webkit-transition: all 0.3s ease-in-out;
-  -o-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-  -webkit-transition-duration: 0.8s;
-       -o-transition-duration: 0.8s;
-          transition-duration: 0.8s;
-  z-index: 10;
-}
-.info-message.is-hide {
-  top: -100%;
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-}
-.info-message.is-show {
-  top: 0;
-  opacity: 1;
-  visibility: visible;
-  pointer-events: all;
-}
-.info-message__title {
-  color: #fff;
-  font-family: "Akrobat", sans-serif;
-  font-size: clamp(1.5rem, 1.312rem + 0.94vw, 2rem);
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  margin-bottom: 30px;
-}
-.info-message__title span {
-  color: #f0cf69;
-}
-.info-message .js-btn-join {
-  width: 100%;
-  max-width: 280px;
-}
-
 .modals-letter .modals__content {
   max-width: 480px;
-}
-.modals-letter .modals__header-title span {
-  color: #f0cf69;
-}
-.modals-letter .pb-pic-block {
-  width: 100%;
-  height: 267px;
-  grid-area: inherit;
-}
-.modals-letter .pb-pic-block img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
 }
 
 @media (max-width: 600px) {
@@ -2530,9 +2421,6 @@ button {
 @media (max-width: 599px) {
   .modals-letter__body {
     grid-template-columns: 1fr;
-  }
-  .modals-letter .pb-pic-block {
-    display: none;
   }
 }
 @media (max-width: 480px) {
@@ -2559,6 +2447,147 @@ button {
   color: #f0cf69;
 }
 
+.modal-message {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10000;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  pointer-events: none;
+  -webkit-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+          transform: scale(1.1);
+}
+.modal-message.is-active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+  -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+          transform: scale(1);
+}
+.modal-message.is-active .info-message {
+  -webkit-transform: translateY(0);
+      -ms-transform: translateY(0);
+          transform: translateY(0);
+}
+.modal-message__overlay {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+.modal-message__content {
+  width: 100%;
+  max-height: 90%;
+  overflow: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.modal-message .reg-form {
+  position: relative;
+  -ms-flex-item-align: center;
+      align-self: center;
+}
+
+.info-message {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  padding: 25px;
+  text-align: center;
+  background-color: #212121;
+  -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  -webkit-transition-duration: 0.5s;
+       -o-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+  z-index: 10;
+  margin-bottom: 64px;
+  -webkit-transform: translateY(-50px);
+      -ms-transform: translateY(-50px);
+          transform: translateY(-50px);
+}
+.info-message.is-hide {
+  top: -100%;
+  visibility: hidden;
+  pointer-events: none;
+}
+.info-message__title {
+  color: #fff;
+  font-family: "Akrobat", sans-serif;
+  font-size: 32px;
+  line-height: 120%;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.info-message__title span {
+  color: #f0cf69;
+  -webkit-animation: flash-text 2s ease-in-out forwards infinite;
+          animation: flash-text 2s ease-in-out forwards infinite;
+}
+
+@-webkit-keyframes flash-text {
+  0% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes flash-text {
+  0% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@media (max-width: 480px) {
+  .info-message {
+    padding: 20px 15px;
+    margin-bottom: 32px;
+  }
+  .info-message__title {
+    font-size: 24px;
+  }
+}
+@media (max-width: 375px) {
+  .info-message__title {
+    font-size: 20px;
+  }
+}
 /* ------------------- Blocks -------------------- */
 .profile-list {
   list-style-position: outside;
@@ -2855,6 +2884,12 @@ button {
     left: 17px;
     right: 17px;
   }
+  .pb-menu li .pb-item .pb-item-text {
+    display: none;
+  }
+  .pb-menu li .pb-item .pb-item-icon {
+    margin-right: 0;
+  }
   .show-more-block {
     margin: 30px 0;
   }
@@ -2899,12 +2934,6 @@ button {
     margin-left: 340px;
     cursor: pointer;
     font-size: 10px;
-  }
-  .pb-menu li .pb-item b b {
-    display: none;
-  }
-  .pb-menu li .pb-item b span {
-    display: block;
   }
   .pb-flex {
     display: block;
@@ -3121,17 +3150,6 @@ button {
   .section-stories {
     padding: 50px 0 35px 0;
   }
-  .rs-pic li {
-    width: 67px;
-    height: 67px;
-  }
-  .rs-pic li:first-child, .rs-pic li:last-child {
-    display: none;
-  }
-  .rs-pic li:active {
-    width: 100px;
-    height: 100px;
-  }
   .section-block {
     padding: 60px 0 30px 0;
   }
@@ -3160,12 +3178,6 @@ button {
   .pb-menu li .pb-item {
     height: 45px;
     font-size: 16px;
-  }
-  .pb-menu li .pb-item > span {
-    margin-right: 0;
-  }
-  .pb-menu li .pb-item b {
-    display: none;
   }
   .pb-pic-block {
     width: 100%;
@@ -3297,19 +3309,6 @@ button {
   }
   .title {
     font-size: 30px;
-  }
-  .rs-pic {
-    margin-left: -10px;
-    margin-right: -10px;
-  }
-  .rs-pic li {
-    margin: 0 10px;
-    width: 60px;
-    height: 60px;
-  }
-  .rs-pic li:active {
-    width: 90px;
-    height: 90px;
   }
   .sr-title {
     font-size: 30px;
