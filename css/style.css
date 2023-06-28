@@ -1269,14 +1269,18 @@ button {
   margin: 0 7px;
 }
 .pb-menu li.active .pb-item {
-  background: #ffffff;
-  border-color: #ffffff;
+  background: #f0cf69;
+  border-color: transparent;
 }
 .pb-menu li.active .pb-item .pb-item-text {
   color: #333333;
 }
 .pb-menu li.active .pb-item .pb-item-icon {
-  color: #f0cf69 !important;
+  color: #333333 !important;
+}
+.pb-menu li.active .pb-item:hover {
+  -webkit-animation: none;
+          animation: none;
 }
 .pb-menu li .pb-item {
   display: -webkit-box;
@@ -2883,7 +2887,13 @@ button {
     display: none;
   }
   .pb-menu li .pb-item .pb-item-icon {
+    font-size: 18px;
     margin-right: 0;
+  }
+  .pb-menu li.active .pb-item .icon-email {
+    color: #333 !important;
+    -webkit-animation: blinker 1.5s linear infinite;
+            animation: blinker 1.5s linear infinite;
   }
   .show-more-block {
     margin: 30px 0;

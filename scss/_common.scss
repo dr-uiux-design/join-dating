@@ -1012,14 +1012,18 @@ button {
 
     &.active {
       .pb-item {
-        background: $color_white;
-        border-color: $color-white;
+        background: $color_gold;
+        border-color: transparent;
         .pb-item-text {
           color: $color-black;
         }
 
         .pb-item-icon {
-          color: $color-gold !important;
+          color: $color-black !important;
+        }
+
+        &:hover {
+          animation: none;
         }
       }
     }
